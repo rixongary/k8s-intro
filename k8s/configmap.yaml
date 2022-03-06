@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: k8s-intro
+  namespace: k8s-intro
+data:
+  NAME: "Gary"
+  ROLE: "Platform Engineer"
+  COOL: "Very"

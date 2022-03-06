@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8s-intro
+  namespace: k8s-intro
+spec:
+  containers:
+  - name: k8s-intro
+    image: eu.gcr.io/justpark-production/k8s-intro:v0.1
+    ports:
+    - containerPort: 8080
+
+

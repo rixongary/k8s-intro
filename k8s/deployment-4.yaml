@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: k8s-intro
+  name: k8s-intro
+spec:
+  minReadySeconds: 60
+  replicas: 3
+  selector:
+    matchLabels:
+      app: k8s-intro
+  template:
+    metadata:
+      labels:
+        app: k8s-intro
+    spec:
+      containers:
+      - image: eu.gcr.io/justpark-production/k8s-intro:v0.2
+        name: k8s-intro
+        envFrom:
+        - configMapRef:
+            name: k8s-intro
