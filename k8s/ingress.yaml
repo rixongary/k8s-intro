@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+    nginx.ingress.kubernetes.io/whitelist-source-range: 62.252.10.122/32,77.246.18.166/32,80.77.246.121/32,35.242.180.189/32,35.197.211.202/32,10.0.0.0/8,154.16.172.228/32,92.115.45.251/32,54.72.219.36/32,202.61.242.152/32,17.32.139.128/27,17.32.139.160/27,17.140.126.0/27,17.140.126.32/27,17.179.144.128/27,17.179.144.160/27,17.179.144.192/27,17.179.144.224/27,17.253.0.0/16,52.17.139.58/32,34.243.53.126/32,52.19.126.40/32,52.49.215.213/32,35.246.99.6/32,143.198.240.77/32,134.209.179.43/32,134.209.179.29/32,134.209.187.11/32,134.209.26.247/32,178.62.41.94/32,159.65.52.80/32,159.65.58.57/32
+  labels:
+    app: k8s-intro
+  name: k8s-intro
+  namespace: k8s-intro
+spec:
+  ingressClassName: default
+  rules:
+  - host: k8s-intro.justpark.me
+    http:
+      paths:
+      - backend:
+          service:
+            name: k8s-intro
+            port:
+              number: 8080
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - k8s-intro.justpark.me
+    secretName: k8s-intro-tls

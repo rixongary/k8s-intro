@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: k8s-intro
+  name: k8s-intro
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-intro
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: k8s-intro
+    spec:
+      containers:
+      - image: eu.gcr.io/justpark-production/k8s-intro:v0.1
+        name: k8s-intro
