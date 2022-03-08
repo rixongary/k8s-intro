@@ -82,7 +82,7 @@ pod/k8s-intro created
     * Get the IPs of both pods: `kubectl get pods -o wide`
     * `curl` both IPs and see what happens
 
-* Apply the service
+* service.yaml
     * Your pods are now available via DNS (`curl k8s-intro.k8s-intro-teamname.svc.cluster.local`)
     * If you make multiple requests, what do you notice about the responses? What is happening behind the scenes?
 * deployment-2 & configmap.yaml
