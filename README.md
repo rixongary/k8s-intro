@@ -1,6 +1,10 @@
+```
 brew install gnu-sed
+```
 
+```
 gsed 's/namespace: k8s-intro/namespace: k8s-intro-teamname/g' *
+```
 
 Go through and apply these different files one by one, seeing what each does and how it works. Ask Junaid/Apos/Gary if stuck)
 
